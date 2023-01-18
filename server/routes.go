@@ -12,7 +12,7 @@ var config *tools.Conf
 func routes() {
 	router.GET("/ping", ping)
 	router.GET("/", index)
-	router.OPTIONS("/themes", themeSender)
+	router.POST("/themes", themeSender)
 }
 
 func Start(cfg *tools.Conf) {
