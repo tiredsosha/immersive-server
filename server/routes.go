@@ -2,25 +2,27 @@ package server
 
 import (
 	"immersive_server/tools"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
 var router *gin.Engine
+var config *tools.Conf
 
 func routes() {
 	router.GET("/ping", ping)
 	router.GET("/", index)
-	router.POST("/themes", themeSender)
+	router.OPTIONS("/themes", themeSender)
 }
 
-func start(port int) {
+func Start(cfg *tools.Conf) {
+	gin.SetMode(gin.ReleaseMode)
+
+	config = cfg
 	router = gin.Default()
-	// Обработаем шаблоны вначале, так что их не нужно будет перечитывать
-	// ещё раз. Из-за этого вывод HTML-страниц такой быстрый.
+
 	router.LoadHTMLGlob("templates/*")
 	routes()
-	router.Run(":" + strconv.Itoa(port))
-	tools.Debug.Println("http is startesd")
+	router.Run(":" + cfg.HttpPort)
+	tools.Debug.Println("http is started")
 }

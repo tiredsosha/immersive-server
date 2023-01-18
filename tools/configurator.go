@@ -9,7 +9,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-type conf struct {
+type Conf struct {
 	OscIp    string `yaml:"oscIp"`
 	OscPort  string `yaml:"oscPort"`
 	HttpPort string `yaml:"httpPort"`
@@ -24,7 +24,7 @@ func getConf(file string, cnf interface{}) error {
 	return err
 }
 
-func validateConf(cfg *conf) error {
+func validateConf(cfg *Conf) error {
 	var err error
 	v := reflect.ValueOf(*cfg)
 	typeOfS := v.Type()
@@ -41,9 +41,9 @@ func validateConf(cfg *conf) error {
 	return err
 }
 
-func confFile() *conf {
+func confFile() *Conf {
 	Warn.Println("making a default config")
-	confDef := conf{
+	confDef := Conf{
 		OscIp:    "127.0.0.1",
 		OscPort:  "8011",
 		HttpPort: "80",
@@ -57,8 +57,8 @@ func confFile() *conf {
 	return &confDef
 }
 
-func ConfInit() *conf {
-	cfg := &conf{}
+func ConfInit() *Conf {
+	cfg := &Conf{}
 	if err := getConf("config.yaml", cfg); err != nil {
 		Error.Println(err)
 		cfg = confFile()

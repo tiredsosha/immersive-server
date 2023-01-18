@@ -42,11 +42,11 @@ func LogInit() {
 func DebugLog(version, httpPort, oscPort, oscIp string) {
 	Debug.Println("---------------------------")
 	Debug.Println("common data:")
-	Debug.Printf("\t\tversion  - %s\n", version)
+	Debug.Printf("\t\tversion   - %s\n", version)
 	Debug.Println("- - - - - - - - - - - - - -")
 	Debug.Println("сonnection data:")
-	Debug.Printf("\t\tOSC IP - %s\n", oscIp)
-	Debug.Printf("\t\tOSC Port - %s\n", oscPort)
+	Debug.Printf("\t\tOSC IP    - %s\n", oscIp)
+	Debug.Printf("\t\tOSC Port  - %s\n", oscPort)
 	Debug.Printf("\t\tHTTP Port - %s\n", httpPort)
 	Debug.Println("---------------------------")
 }
