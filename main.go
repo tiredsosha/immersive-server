@@ -15,5 +15,7 @@ func main() {
 	cfg := tools.ConfInit()
 	tools.DebugLog(version, cfg.HttpPort, cfg.OscPort, cfg.OscIp)
 
+	go tools.TrayStart()
+
 	server.Start(cfg)
 }

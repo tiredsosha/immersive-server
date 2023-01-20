@@ -20,6 +20,7 @@ func themeSender(conn *gin.Context) {
 	OscPort, _ := strconv.Atoi(config.OscPort)
 
 	tools.Debug.Println("sending command \"" + req.Command + "\" to server")
+
 	client := osc.NewClient(config.OscIp, OscPort)
 	msg := osc.NewMessage("/" + req.Command)
 	msg.Append(0.5)
