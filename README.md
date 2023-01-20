@@ -1,4 +1,4 @@
-# immersive-server
+# IMMERSIVE-SERVER
 
 A simple background http server that controls Mad Mapper (or any osc) via webpage.
 
