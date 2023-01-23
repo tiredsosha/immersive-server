@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-	<meta content="width=device-width, maximum-scale=1.0" name="viewport">
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-	
-	
-	<title>Modes</title>
-  </head>
-  <body style="background-color: #1E6B74;">
-    <header>
-      <div class="logo-container">
-        <img src="../img/logowhite.png" class="logo">
-      </div>
-    </header>
-    <div class="main-content">
-      <div class="choose-mode">Please select a mode:</div>
-      <div class="gallery">
-        <div id=nature class="image-container" onclick="sender(this.id)">
-          <img src="../img/photo1.jpeg" class="image">
-          <button class="image-button" onclick="animateImage(this)">Nature</button>
-        </div>
-        <div id=water class="image-container" onclick="sender(this.id)">
-          <img src="../img/photo_2.jpeg" class="image" >
-          <button class="image-button" onclick="animateImage(this)">Sea</button>
-        </div>
-        <div id=test class="image-container" onclick="sender(this.id)">
-          <img src="../img/Empty.png" class="image">
-          <button class="image-button" onclick="animateImage(this)">New Mode</button>
-        </div>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script>
-          function sender(theme) {
-            // alert(theme);
-            axios.post('http://127.0.0.1/themes', {command: theme});
-          };
-          const cors = require('cors');
-          cors({
-              credentials: true,
-              origin: true,
-            })
 
-        </script>
-      </div>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <meta content="width=device-width, maximum-scale=1.0" name="viewport">
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+
+
+  <title>Modes</title>
+</head>
+
+<body style="background-color: #1E6B74;">
+  <header>
+    <div class="logo-container">
+      <img src="../img/logowhite.png" class="logo">
     </div>
-  
-  </body>
+  </header>
+  <div class="main-content">
+    <div class="choose-mode">Please select a mode:</div>
+    <div class="gallery">
+      <div id=nature class="image-container" onclick="sender(this.id)">
+        <img src="../img/photo1.jpeg" class="image">
+        <button class="image-button">Nature</button>
+      </div>
+      <div id=water class="image-container" onclick="sender(this.id)">
+        <img src="../img/photo_2.jpeg" class="image">
+        <button class="image-button">Sea</button>
+      </div>
+      <div id=test class="image-container" onclick="sender(this.id)">
+        <img src="../img/Empty.png" class="image">
+        <button class="image-button">New Mode</button>
+      </div>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script>
+        function sender(theme) {
+          // alert(theme);
+          axios.post('http://127.0.0.1/themes', { command: theme });
+        };
+        const cors = require('cors');
+        cors({
+          credentials: true,
+          origin: true,
+        })
+
+      </script>
+    </div>
+  </div>
+
+</body>
+
 </html>

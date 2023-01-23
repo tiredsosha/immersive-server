@@ -1,45 +1,51 @@
 body {
-    color: white;
-    font-size: 50px;
-    font-family: 'lato' ;
+  color: white;
+  font-size: 50px;
+  font-family: 'lato';
 
 }
+
 header {
   text-align: center;
   margin-top: 50px;
 }
+
 .logo-container {
   text-align: center;
 }
+
 .logo {
-    width: 200px;
-    height: auto;
+  width: 200px;
+  height: auto;
 }
+
 .main-content {
-    margin: 0 auto;
-    max-width: 800px;
-    text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
 }
+
 .choose-mode {
-    margin-top: 50px;
+  margin-top: 50px;
 }
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
   margin-top: 50px;
 }
 
 .image-container {
   position: relative;
-  width: 100%; 
+  width: 100%;
   margin: 1rem;
 }
 
 .image {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px 10px 0px 20px;
 }
 
 
@@ -54,55 +60,69 @@ header {
   padding: 10px;
   text-align: center;
   transition: background-color 0.5s ease-in-out;
-  border:0px;
-  font-family: 'lato' ;
- 
+  border: 0px;
+  font-family: 'lato';
+
 }
 
-  
-.image-button:after {
-    content: "";
-    display: block;
-    position: absolute;
-  
-    left: 0;
-    top:0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.5s;
-    box-shadow: 0 0 10px 20px white;
-  }
-  
-  .image-button:active:after {
-    box-shadow: 0 0 0 0 white;
-    position: absolute;
- 
-    left: 0;
-    top:0;
-    opacity: 1;
-    transition: 0s;
-  }
-  
+
+.image-container:after {
+  content: "";
+  display: block;
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 20px white;
+}
+
+.image-container:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
 
 /* Responsive styles */
-@media only screen and (min-width: 420px) {.image-container {width: 100%;}}
-@media only screen and (min-width: 768px) {.image-container {width: 45%;}}
-@media only screen and (min-width: 992px) {.image-container {width: 29%;}}
+@media only screen and (min-width: 420px) {
+  .image-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .image-container {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .image-container {
+    width: 29%;
+  }
+}
 
 
 
 
 @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 600;
-    src: url('../fonts/LatoBold.woff2') format('woff2');
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/LatoBold.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/LatoRegular.woff2') format('woff2');
-}   
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/LatoRegular.woff2') format('woff2');
+}
